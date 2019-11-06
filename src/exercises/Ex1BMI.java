@@ -11,7 +11,7 @@ import static java.lang.System.out;
  * See https://en.wikipedia.org/wiki/Body_mass_index
  *
  * Formula is: bmi = weight / height²     (kg/m²)
- * THIS IS A TEST
+ * THIS IS A TEST 2
  * See:
  * - F2C
  * - IO
