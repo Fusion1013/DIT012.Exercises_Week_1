@@ -23,15 +23,21 @@ public class Ex3SumAvg {
     void program() {
         // Write your code here
 
-
         // -- Input (and bookkeeping)
+        int sum = 0;
+        double i = 0;
+        int inp = sc.nextInt();
 
-
-        // -- Process---
-
+        // Process
+        while (inp != -1)
+        {
+            sum += inp;
+            inp = sc.nextInt();
+            i++;
+        }
 
         // -- Output ----
-        out.println("Sum = " + "..." + " Avg = " + "...");
+        out.println("Sum = " + sum + " Avg = " + sum / i);
     }
 
 }
