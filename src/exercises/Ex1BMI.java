@@ -1,6 +1,5 @@
 package exercises;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 import static java.lang.System.in;
@@ -31,19 +30,18 @@ public class Ex1BMI {
 
     void program() {
         // Write your code here
-        double inWeight = 0;
-        double inHeight = 0;
+        out.print("Weight: ");
+        float w = sc.nextFloat();
+        out.print("Height: ");
+        float h = sc.nextFloat();
+
         // --- Input ---------
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Please enter your weight (kg): ");
-        inWeight = sc.nextDouble();
-        System.out.print("Please enter your height (m): ");
-        inHeight = sc.nextDouble();
 
         // --- Process --------
-        double bmi = inWeight / (inHeight * inHeight);
+        float wh = w / (h * h);
+
         // --- Output ---------
-        out.println("BMI = " + bmi + ":" + inWeight + ":" + inHeight);
+        out.println("BMI = " + wh + " kg/m²");
     }
 
 }
