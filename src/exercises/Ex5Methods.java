@@ -17,9 +17,9 @@ public class Ex5Methods {
 
     void program() {
         // All, except last,  should print true
-       /* out.println(sumTo(5) == 15);     // 1 + 2 + ... + 5 = 15
+        out.println(sumTo(5) == 15);     // 1 + 2 + ... + 5 = 15
         out.println(sumTo(23) == 276);
-        out.println(factorial(3) == 6);    // 3 * 2 * 1 = 6
+        /*out.println(factorial(3) == 6);    // 3 * 2 * 1 = 6
         out.println(factorial(5) == 120);
         out.println(digitSum(1111) == 4);   // 1 + 1 + 1 + 1 = 4
         out.println(digitSum(12345) == 15);
@@ -36,6 +36,34 @@ public class Ex5Methods {
     }
 
     // ------ Write methods below this  -----------
+    int sumTo(int n)
+    {
+        int sum = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            sum += i;
+        }
+        return sum;
+    }
 
+    int factorial(int n)
+    {
+        int fac = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            fac *= i;
+        }
+        return fac;
+    }
+
+    int digitSum(int n)
+    {
+        int dig = 0;
+        for (int i = 0; i <= n; i++)
+        {
+
+        }
+        return dig;
+    }
 
 }
