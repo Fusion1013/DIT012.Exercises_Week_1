@@ -53,6 +53,25 @@ public class Ex2EasterDay {
             If date is 26 easter is on 19 of april.
             If date is 25 and a = 16 and d = 28 then date is 18 of april.
          */
+        if (date < 32)
+        {
+            month = 3;
+        }
+        else if (date == 26)
+        {
+            month = 4;
+            date = 19;
+        }
+        else if (date == 25 && a == 16 && d == 28)
+        {
+            month = 4;
+            date = 18;
+        }
+        else
+        {
+            month = 4;
+            date = d + e - 9;
+        }
 
 
 
