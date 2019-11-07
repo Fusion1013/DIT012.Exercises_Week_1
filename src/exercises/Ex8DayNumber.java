@@ -26,7 +26,7 @@ public class Ex8DayNumber {
     final Scanner sc = new Scanner(in);
 
     void program() {
-        test();                // <--------- Uncomment to test only
+        //test();                // <--------- Uncomment to test only
 
         // -- In ----------------
         out.print("Input the year > ");
@@ -41,7 +41,7 @@ public class Ex8DayNumber {
         // Write the code to call top level method here
         // Then break the method down in smaller methods, call them etc.
         // Inside toå leel method etc.
-        int dayNbr = 0;   // TODO call method for result
+        int dayNbr = dayNumber(year, month, day);
 
         // ---- Out ----
         printResult(year, month, day, dayNbr);
@@ -50,20 +50,53 @@ public class Ex8DayNumber {
 
     // ------------ Write your methods below this ------
 
-    // TODO
+    int dayNumber(int year, int month, int day)
+    {
+        return combineMonths(month, year) + day;
+    }
 
+    int combineMonths(int month, int year)
+    {
+        int[] arr = getMonthArray(year);
+        int result = 0;
+        for(int i = 0; i < month - 1; i++)
+        {
+            result += arr[i];
+        }
+        return result;
+    }
 
+    int[] getMonthArray(int year)
+    {
+        if(isLeapYear(year))
+        {
+            return new int[]{31,29,31,30,31,30,31,31,30,31,30,31};
+        }
+        else
+        {
+            return new int[]{31,28,31,30,31,30,31,31,30,31,30,31};
+        }
+    }
+
+    boolean isLeapYear(int year)
+    {
+        if(year % 4 == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     void printResult(int year, int month, int day, int dayNbr) {
-        /*
         out.println("Ordinal number for " + day + "/" + month + " in " + year + " is: " + dayNbr);
-        if (...isLeapYear...) {
+        if (isLeapYear(year)) {
             out.println(year + " is a leap year");
         } else {
             out.println(year + " is not a leap year");
         }
-
-         */
     }
 
     // This is used to test methods in isolation
