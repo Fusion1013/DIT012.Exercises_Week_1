@@ -32,9 +32,9 @@ public class Ex7RPS {
     void program() {
 
         int maxRounds = 5;
-        int human;          // Outcome for player
-        int computer;       // Outcome for computer
-        int result;         // Result for this round
+        int human = 0;          // Outcome for player
+        int computer = 0;       // Outcome for computer
+        int result = 0;         // Result for this round
         int round = 0;      // Number of rounds
         int total = 0;      // Final result after all rounds
 
@@ -43,17 +43,49 @@ public class Ex7RPS {
         out.println("Welcome to Rock, Scissors and Paper");
 
         // Here the game loop starts
-
+        for(round = 0; round < maxRounds; round++)
+        {
             // -------- Input --------------
-
+            out.print("Select 1, 2 or 3 (for R, P or S): ");
+            int ps = sc.nextInt();
 
             // ----- Process -----------------
 
+            //Choose Computer Selection
+            int cs = rand.nextInt(3) + 1;
+            out.println("Computer Choose: " + cs);
 
+            boolean playerWin = false;
+
+            //Win Cases
+            if (ps == 1 && cs == 2) playerWin = false;
+            else if (ps == 2 && cs == 3) playerWin = false;
+            else if (ps == 3 && cs == 1) playerWin = false;
+            else playerWin = true;
+
+            //Result Checker
+            if (ps == cs) //If it's a draw, don't run rest of win detection
+            {
+                out.println("It's a Draw");
+            }
+            else //If it's not a draw, run win detection
+            {
+                if (playerWin) {
+                    human += 1;
+                    out.println("You won");
+                }
+                else {
+                    computer += 1;
+                    out.println("Computer Won");
+                }
+            }
             // ---------- Output --------------
-
+            result = human - computer;
+            out.println("Result: " + result);
+        }
 
           //--------  End Game loop
+        total = human - computer;
 
         out.println("Game over! ");
         if (total == 0) {
